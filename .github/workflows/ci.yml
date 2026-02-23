@@ -1,7 +1,19 @@
-name: CI
+name: CI Pipeline Test
+
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Simulate build
+        run: |
+          echo "Starting build..."
+          exit 1
